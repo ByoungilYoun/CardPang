@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F15F80324DDDFD6008B36CD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F15F80224DDDFD6008B36CD /* Extensions.swift */; };
+		0F15F80624DDE9F3008B36CD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0F15F80524DDE9F3008B36CD /* SnapKit */; };
 		0F8ED79C24DBC76600D5D008 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8ED79B24DBC76600D5D008 /* AppDelegate.swift */; };
 		0F8ED7A524DBC76700D5D008 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F8ED7A424DBC76700D5D008 /* Assets.xcassets */; };
 		0F8ED7A824DBC76700D5D008 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F8ED7A624DBC76700D5D008 /* LaunchScreen.storyboard */; };
@@ -14,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F15F80224DDDFD6008B36CD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0F8ED79824DBC76600D5D008 /* CardPang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardPang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F8ED79B24DBC76600D5D008 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F8ED7A424DBC76700D5D008 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -27,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F15F80624DDE9F3008B36CD /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +102,7 @@
 		0F8ED7B324DBC81500D5D008 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				0F15F80224DDDFD6008B36CD /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -125,6 +130,9 @@
 			dependencies = (
 			);
 			name = CardPang;
+			packageProductDependencies = (
+				0F15F80524DDE9F3008B36CD /* SnapKit */,
+			);
 			productName = CardPang;
 			productReference = 0F8ED79824DBC76600D5D008 /* CardPang.app */;
 			productType = "com.apple.product-type.application";
@@ -153,6 +161,9 @@
 				Base,
 			);
 			mainGroup = 0F8ED78F24DBC76600D5D008;
+			packageReferences = (
+				0F15F80424DDE9F3008B36CD /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 0F8ED79924DBC76600D5D008 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -180,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F8ED79C24DBC76600D5D008 /* AppDelegate.swift in Sources */,
+				0F15F80324DDDFD6008B36CD /* Extensions.swift in Sources */,
 				0F8ED7B824DBC8B900D5D008 /* LoginController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,6 +384,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0F15F80424DDE9F3008B36CD /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0F15F80524DDE9F3008B36CD /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0F15F80424DDE9F3008B36CD /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0F8ED79024DBC76600D5D008 /* Project object */;
 }
