@@ -10,11 +10,16 @@ import UIKit
 
 class AuthButton : UIButton {
   
+  var title : String?{
+    didSet {
+      setTitle(title, for: .normal)
+    }
+  }
+  
   override init(frame: CGRect) {
     super.init(frame: frame)
     
     layer.cornerRadius = 5
-    setTitle("로그인", for: .normal)
     backgroundColor = UIColor.systemPurple.withAlphaComponent(0.5)
     setTitleColor(UIColor(white: 1, alpha: 0.67), for: .normal)
     setHeight(height: 40)

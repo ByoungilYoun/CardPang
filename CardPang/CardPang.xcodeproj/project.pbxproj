@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F1472DE24DF34C600F4C946 /* RegisterationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1472DD24DF34C600F4C946 /* RegisterationController.swift */; };
 		0F15F80324DDDFD6008B36CD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F15F80224DDDFD6008B36CD /* Extensions.swift */; };
 		0F15F80624DDE9F3008B36CD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0F15F80524DDE9F3008B36CD /* SnapKit */; };
 		0F49355424DF17E100F045FC /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F49355324DF17E100F045FC /* CustomTextField.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F1472DD24DF34C600F4C946 /* RegisterationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterationController.swift; sourceTree = "<group>"; };
 		0F15F80224DDDFD6008B36CD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0F49355324DF17E100F045FC /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		0F49355524DF1A1200F045FC /* CustomTextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextLabel.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				0F8ED7B724DBC8B900D5D008 /* LoginController.swift */,
+				0F1472DD24DF34C600F4C946 /* RegisterationController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				0F49355824DF1C7500F045FC /* AuthButton.swift in Sources */,
 				0F8ED79C24DBC76600D5D008 /* AppDelegate.swift in Sources */,
 				0F15F80324DDDFD6008B36CD /* Extensions.swift in Sources */,
+				0F1472DE24DF34C600F4C946 /* RegisterationController.swift in Sources */,
 				0F8ED7B824DBC8B900D5D008 /* LoginController.swift in Sources */,
 				0F49355624DF1A1200F045FC /* CustomTextLabel.swift in Sources */,
 			);

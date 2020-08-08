@@ -25,6 +25,7 @@ class LoginController : UIViewController {
   
   private let loginButton : AuthButton = {
     let button = AuthButton()
+    button.title = "로그인"
     button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
     button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
     return button
@@ -169,6 +170,7 @@ class LoginController : UIViewController {
   }
   
   @objc func showRegisterationController() {
-    
+    let controller = RegistrationController()
+    navigationController?.pushViewController(controller, animated: true)
   }
 }
