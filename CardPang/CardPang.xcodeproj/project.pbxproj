@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0F15F80324DDDFD6008B36CD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F15F80224DDDFD6008B36CD /* Extensions.swift */; };
 		0F15F80624DDE9F3008B36CD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0F15F80524DDE9F3008B36CD /* SnapKit */; };
+		0F49355424DF17E100F045FC /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F49355324DF17E100F045FC /* CustomTextField.swift */; };
+		0F49355624DF1A1200F045FC /* CustomTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F49355524DF1A1200F045FC /* CustomTextLabel.swift */; };
+		0F49355824DF1C7500F045FC /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F49355724DF1C7500F045FC /* AuthButton.swift */; };
 		0F8ED79C24DBC76600D5D008 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8ED79B24DBC76600D5D008 /* AppDelegate.swift */; };
 		0F8ED7A524DBC76700D5D008 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F8ED7A424DBC76700D5D008 /* Assets.xcassets */; };
 		0F8ED7A824DBC76700D5D008 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F8ED7A624DBC76700D5D008 /* LaunchScreen.storyboard */; };
@@ -17,6 +20,9 @@
 
 /* Begin PBXFileReference section */
 		0F15F80224DDDFD6008B36CD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		0F49355324DF17E100F045FC /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		0F49355524DF1A1200F045FC /* CustomTextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextLabel.swift; sourceTree = "<group>"; };
+		0F49355724DF1C7500F045FC /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		0F8ED79824DBC76600D5D008 /* CardPang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardPang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F8ED79B24DBC76600D5D008 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F8ED7A424DBC76700D5D008 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -88,6 +94,9 @@
 		0F8ED7B124DBC81100D5D008 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0F49355524DF1A1200F045FC /* CustomTextLabel.swift */,
+				0F49355324DF17E100F045FC /* CustomTextField.swift */,
+				0F49355724DF1C7500F045FC /* AuthButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -190,9 +199,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F49355424DF17E100F045FC /* CustomTextField.swift in Sources */,
+				0F49355824DF1C7500F045FC /* AuthButton.swift in Sources */,
 				0F8ED79C24DBC76600D5D008 /* AppDelegate.swift in Sources */,
 				0F15F80324DDDFD6008B36CD /* Extensions.swift in Sources */,
 				0F8ED7B824DBC8B900D5D008 /* LoginController.swift in Sources */,
+				0F49355624DF1A1200F045FC /* CustomTextLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +272,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -314,7 +326,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -339,7 +351,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.byoungil.youn.CardPang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -358,7 +370,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.byoungil.youn.CardPang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
