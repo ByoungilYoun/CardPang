@@ -80,7 +80,7 @@ class LoginController : UIViewController {
   //MARK: - viewDidLoad()
   override func viewDidLoad() {
     super.viewDidLoad()
-    setGradient()
+    configureGradientBackground()
     setNavi()
     setUI()
     setConstraints()
@@ -137,18 +137,6 @@ class LoginController : UIViewController {
       $0.centerX.equalToSuperview()
       $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-20)
     }
-    
-  }
-  
-  //MARK: - setGradient()
-  private func setGradient() {
-    let upperColor = UIColor(red: 205/255.0, green: 53/255.0, blue: 134/255.0, alpha: 1.0)
-    let lowerColor = UIColor(red: 233/255.0, green: 171/255.0, blue: 67/255.0, alpha: 1.0)
-    let gradient = CAGradientLayer()
-    gradient.colors = [upperColor.cgColor, lowerColor.cgColor]
-    gradient.locations = [0, 1]
-    gradient.frame = view.frame
-    view.layer.addSublayer(gradient)
   }
   
   //MARK: - objf Functions
@@ -158,7 +146,8 @@ class LoginController : UIViewController {
   }
   
   @objc func showForgotPassword() {
-    
+    let controller = ResetPasswordController()
+    navigationController?.pushViewController(controller, animated: true)
   }
   
   @objc func handleGoogleLogin() {

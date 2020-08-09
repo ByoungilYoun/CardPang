@@ -50,20 +50,9 @@ class RegistrationController : UIViewController {
   //MARK: - viewDidLoad()
   override func viewDidLoad() {
     super.viewDidLoad()
-    setGradient()
+    configureGradientBackground()
     setUI()
     setConstraints()
-  }
-  
-  //MARK: - setGradient()
-  private func setGradient() {
-    let upperColor = UIColor(red: 205/255.0, green: 53/255.0, blue: 134/255.0, alpha: 1.0)
-    let lowerColor = UIColor(red: 233/255.0, green: 171/255.0, blue: 67/255.0, alpha: 1.0)
-    let gradient = CAGradientLayer()
-    gradient.colors = [upperColor.cgColor, lowerColor.cgColor]
-    gradient.locations = [0, 1]
-    gradient.frame = view.frame
-    view.layer.addSublayer(gradient)
   }
   
   //MARK: - setUI()
