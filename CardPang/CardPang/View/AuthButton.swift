@@ -20,7 +20,7 @@ class AuthButton : UIButton {
     super.init(frame: frame)
     
     layer.cornerRadius = 5
-    backgroundColor = UIColor.systemPurple.withAlphaComponent(0.5)
+    backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
     setTitleColor(UIColor(white: 1, alpha: 0.67), for: .normal)
     setHeight(height: 40)
     isEnabled = false 

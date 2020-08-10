@@ -34,18 +34,20 @@ class RegistrationController : UIViewController {
   
   private let alreadyHaveAccountButton : UIButton = {
     let button = UIButton(type: .system)
-        
-        let atts : [NSAttributedString.Key : Any] = [.foregroundColor : UIColor(white: 1, alpha: 0.87), .font : UIFont.systemFont(ofSize: 15)]
-        let attributedTitle = NSMutableAttributedString(string: "계정이 있으신가요? ", attributes: atts)
-        
-        let boldAtts : [NSAttributedString.Key : Any] = [.foregroundColor : UIColor(white: 1, alpha: 0.87), .font : UIFont.systemFont(ofSize: 15)]
-        attributedTitle.append(NSAttributedString(string: "로그인하기", attributes: boldAtts))
-        
-        button.setAttributedTitle(attributedTitle, for: .normal)
-        
-        button.addTarget(self, action: #selector(showLoginController), for: .touchUpInside)
-        return button
+    
+    let atts : [NSAttributedString.Key : Any] = [.foregroundColor : UIColor(white: 1, alpha: 0.87), .font : UIFont.systemFont(ofSize: 15)]
+    let attributedTitle = NSMutableAttributedString(string: "계정이 있으신가요? ", attributes: atts)
+    
+    let boldAtts : [NSAttributedString.Key : Any] = [.foregroundColor : UIColor(white: 1, alpha: 0.87), .font : UIFont.systemFont(ofSize: 15)]
+    attributedTitle.append(NSAttributedString(string: "로그인하기", attributes: boldAtts))
+    
+    button.setAttributedTitle(attributedTitle, for: .normal)
+    
+    button.addTarget(self, action: #selector(showLoginController), for: .touchUpInside)
+    return button
   }()
+  
+  private var viewModel = RegisterationViewModel()
   
   //MARK: - viewDidLoad()
   override func viewDidLoad() {
@@ -53,6 +55,7 @@ class RegistrationController : UIViewController {
     configureGradientBackground()
     setUI()
     setConstraints()
+    configureNotificationObservers()
   }
   
   //MARK: - setUI()
@@ -82,6 +85,13 @@ class RegistrationController : UIViewController {
     }
   }
   
+  //MARK: - configureNotificationObservers()
+  private func configureNotificationObservers() {
+    emailTextField.addTarget(self, action: #selector(textDidChange(_:)), for: .editingChanged)
+    passwordTextField.addTarget(self, action: #selector(textDidChange(_:)), for: .editingChanged)
+    fullnameTextField.addTarget(self, action: #selector(textDidChange(_:)), for: .editingChanged)
+  }
+  
   //MARK: - @objc func
   @objc func handleSignUP() {
     
@@ -89,5 +99,25 @@ class RegistrationController : UIViewController {
   
   @objc func showLoginController() {
     navigationController?.popViewController(animated: true)
+  }
+  
+  @objc func textDidChange(_ sender : UITextField) {
+    if sender == emailTextField {
+      viewModel.email = sender.text
+    } else if sender == passwordTextField {
+      viewModel.password = sender.text
+    } else {
+      viewModel.fullname = sender.text
+    }
+    updateForm() 
+  }
+}
+
+//MARK: - extension FormViewModel
+extension RegistrationController : FormViewModel {
+  func updateForm() {
+    signUpButton.isEnabled = viewModel.shouldEnableButton
+    signUpButton.backgroundColor = viewModel.buttonBackgroundColor
+    signUpButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
   }
 }

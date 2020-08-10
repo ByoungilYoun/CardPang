@@ -77,6 +77,7 @@ class LoginController : UIViewController {
     return button
   }()
   
+  private var viewModel = LoginViewModel() 
   //MARK: - viewDidLoad()
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -84,6 +85,7 @@ class LoginController : UIViewController {
     setNavi()
     setUI()
     setConstraints()
+    configureNotificationObservers()
   }
   
   //MARK: - setNavi()
@@ -138,8 +140,12 @@ class LoginController : UIViewController {
       $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-20)
     }
   }
-  
-  //MARK: - objf Functions
+  //MARK: - configureNotificationObservers()
+  private func configureNotificationObservers () {
+    emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+    passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+  }
+  //MARK: - objc Functions
   
   @objc func handleLogin() {
     
@@ -161,5 +167,23 @@ class LoginController : UIViewController {
   @objc func showRegisterationController() {
     let controller = RegistrationController()
     navigationController?.pushViewController(controller, animated: true)
+  }
+  
+  @objc func textDidChange(_ sender : UITextField) {
+    if sender == emailTextField {
+      viewModel.email = sender.text
+    } else {
+      viewModel.password = sender.text
+    }
+    updateForm()
+  }
+}
+
+//MARK: - extension FormViewModel
+extension LoginController : FormViewModel {
+  func updateForm() {
+    loginButton.isEnabled = viewModel.shouldEnableButton
+    loginButton.backgroundColor = viewModel.buttonBackgroundColor
+    loginButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
   }
 }

@@ -18,6 +18,7 @@
 		0F8ED7A824DBC76700D5D008 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F8ED7A624DBC76700D5D008 /* LaunchScreen.storyboard */; };
 		0F8ED7B824DBC8B900D5D008 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8ED7B724DBC8B900D5D008 /* LoginController.swift */; };
 		0FD15E4E24E077C40009FF2E /* ResetPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD15E4D24E077C40009FF2E /* ResetPasswordController.swift */; };
+		0FD15E5024E086770009FF2E /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD15E4F24E086770009FF2E /* AuthenticationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		0F8ED7A924DBC76700D5D008 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F8ED7B724DBC8B900D5D008 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		0FD15E4D24E077C40009FF2E /* ResetPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordController.swift; sourceTree = "<group>"; };
+		0FD15E4F24E086770009FF2E /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		0F8ED7B024DBC81000D5D008 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0FD15E4F24E086770009FF2E /* AuthenticationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				0F8ED79C24DBC76600D5D008 /* AppDelegate.swift in Sources */,
 				0F15F80324DDDFD6008B36CD /* Extensions.swift in Sources */,
 				0F1472DE24DF34C600F4C946 /* RegisterationController.swift in Sources */,
+				0FD15E5024E086770009FF2E /* AuthenticationViewModel.swift in Sources */,
 				0F8ED7B824DBC8B900D5D008 /* LoginController.swift in Sources */,
 				0F49355624DF1A1200F045FC /* CustomTextLabel.swift in Sources */,
 			);

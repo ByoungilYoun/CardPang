@@ -31,12 +31,15 @@ class ResetPasswordController : UIViewController {
     return button
   }()
   
+  private var viewModel = ResetPasswordViewModel()
+  
   //MARK: - viewDidLoad()
   override func viewDidLoad() {
     super.viewDidLoad()
     configureGradientBackground()
     setUI()
     setConstraints()
+    configureNotificationObservers()
   }
   
   //MARK: - setUI()
@@ -51,6 +54,7 @@ class ResetPasswordController : UIViewController {
     stackView.anchor(top: iconImage.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 50 , paddingLeft: 30, paddingRight: 30)
   }
   
+  //MARK: - setConstraints()
   private func setConstraints() {
     iconImage.snp.makeConstraints {
       $0.centerX.equalToSuperview()
@@ -63,6 +67,12 @@ class ResetPasswordController : UIViewController {
     }
   }
   
+  //MARK: - configureNotificationObservers()
+  private func configureNotificationObservers() {
+    emailTextField.addTarget(self, action: #selector(textDidChange(_:)), for: .editingChanged)
+  }
+  
+  
   //MARK: - @objc func
   @objc func handleResetPassword() {
     
@@ -70,5 +80,21 @@ class ResetPasswordController : UIViewController {
   
   @objc func handleGoBack() {
     navigationController?.popViewController(animated: true)
+  }
+  
+  @objc func textDidChange(_ sender : UITextField) {
+    if sender == emailTextField {
+      viewModel.email = sender.text
+    }
+    updateForm()
+  }
+}
+
+  //MARK: - extension
+extension ResetPasswordController : FormViewModel {
+  func updateForm() {
+    resetPasswordButton.isEnabled = viewModel.shouldEnableButton
+    resetPasswordButton.backgroundColor = viewModel.buttonBackgroundColor
+    resetPasswordButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
   }
 }
