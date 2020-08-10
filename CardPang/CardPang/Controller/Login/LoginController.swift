@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 import Firebase
+import GoogleSignIn
 
 class LoginController : UIViewController {
   
@@ -88,6 +89,7 @@ class LoginController : UIViewController {
     setUI()
     setConstraints()
     configureNotificationObservers()
+    configureGoogleSignIn()
   }
   
   //MARK: - setNavi()
@@ -147,6 +149,12 @@ class LoginController : UIViewController {
     emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
   }
+  
+  //MARK: - configureGoogleSignIn()
+  private func configureGoogleSignIn() {
+    GIDSignIn.sharedInstance()?.presentingViewController = self
+    GIDSignIn.sharedInstance()?.delegate = self
+  }
   //MARK: - objc Functions
   
   @objc func handleLogin() {
@@ -168,7 +176,7 @@ class LoginController : UIViewController {
   }
   
   @objc func handleGoogleLogin() {
-    
+    GIDSignIn.sharedInstance()?.signIn()
   }
   
   @objc func handleAppleLogin() {
@@ -196,5 +204,12 @@ extension LoginController : FormViewModel {
     loginButton.isEnabled = viewModel.shouldEnableButton
     loginButton.backgroundColor = viewModel.buttonBackgroundColor
     loginButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
+  }
+}
+
+//MARK: - extension GIDSignInDelegate
+extension LoginController : GIDSignInDelegate {
+  func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+    print("Debug : Handle google Sign In")
   }
 }
