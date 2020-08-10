@@ -1,0 +1,6 @@
+framework module Pods_CardPang {
+  umbrella header "Pods-CardPang-umbrella.h"
+
+  export *
+  module * { export * }
+}
