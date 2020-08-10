@@ -11,9 +11,6 @@ import Firebase
 
 class HomeController : UIViewController {
   
-  //MARK: - Properties
-  
-  
   //MARK: - Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -30,27 +27,33 @@ class HomeController : UIViewController {
     
     let image = UIImage(systemName: "arrow.left")
     navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(handleLogout))
+    navigationItem.leftBarButtonItem?.tintColor = .white
   }
   
   //MARK: - logout()
   private func logout() {
     do {
       try Auth.auth().signOut()
-      print("Debug : Signed Out")
+      self.presentLoginController()
     } catch {
       print("Debug : Error Signing Out")
     }
+  }
+  
+  //MARK: - presentLoginController()
+  fileprivate func presentLoginController() {
+    let controller = LoginController()
+    let navi = UINavigationController(rootViewController: controller)
+    
+    navi.modalPresentationStyle = .fullScreen
+    self.present(navi, animated: true)
   }
   
   //MARK: - authenticateUser()
   private func authenticateUser() {
     if Auth.auth().currentUser?.uid == nil {
       DispatchQueue.main.async {
-        let controller = LoginController()
-        let navi = UINavigationController(rootViewController: controller)
-        
-        navi.modalPresentationStyle = .fullScreen
-        self.present(navi, animated: true)
+        self.presentLoginController()
       }
     } else {
       print("Debug : User is logged in")
@@ -60,6 +63,11 @@ class HomeController : UIViewController {
   //MARK: - objc func
   
   @objc func handleLogout() {
-    logout()
+    let alert = UIAlertController(title: nil, message: "로그아웃을 하시겠습니까?", preferredStyle: .actionSheet)
+    alert.addAction(UIAlertAction(title: "로그아웃", style: .destructive, handler: { _ in
+      self.logout()
+    }))
+    alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
+    present(alert, animated: true)
   }
 }
