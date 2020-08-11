@@ -19,13 +19,13 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
 			<key>CFBundleURLName</key>
 			<string>Google Sign In</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.22888426705-gs6jjkgic3selutk5sr8k8c0vq6g943c'</string>
+				<string>com.googleusercontent.apps.22888426705-gs6jjkgic3selutk5sr8k8c0vq6g943c</string>
 			</array>
 		</dict>
 	</array>
