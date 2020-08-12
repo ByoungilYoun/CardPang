@@ -23,6 +23,7 @@ struct Service {
     Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
       if let error = error {
         print("Debug : Failed to create user with error : \(error.localizedDescription)")
+        completion(error, REF_USERS)
         return
       }
       
@@ -42,6 +43,7 @@ struct Service {
     Auth.auth().signIn(with: credential) { (result, error) in
       if let error = error {
         print("Debug : Failed to sign in with google : \(error.localizedDescription)")
+        completion(error, REF_USERS)
         return
       }
       guard let uid = result?.user.uid else {return}
@@ -73,9 +75,15 @@ struct Service {
     }
   }
   
+  //MARK: - updateUserHasSeenOnboarding
   static func updateUserHasSeenOnboarding(completion : @escaping (DatabaseCompletion)) {
-    guard let uid = Auth.auth().currentUser?.uid else {return}
+     guard let uid = Auth.auth().currentUser?.uid else {return}
     REF_USERS.child("hasSeenOnboarding").setValue(true, withCompletionBlock: completion)
+  }
+  
+  //MARK: - resetPassword
+  static func resetPassword(forEmail email : String, completion : SendPasswordResetCallback?) {
+    Auth.auth().sendPasswordReset(withEmail: email, completion: completion)
   }
 }
 

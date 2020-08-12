@@ -15,6 +15,7 @@ protocol OnboardingControllerDelegate : class {
 
 class OnboardingController : UIViewController {
   //MARK: - Properties
+  weak var delegate : OnboardingControllerDelegate?
   
   private var onboardingItems = [OnboardingItemInfo]()
   private var onboardingView = PaperOnboarding()
@@ -28,13 +29,11 @@ class OnboardingController : UIViewController {
     return button
   }()
   
-  weak var delegate : OnboardingControllerDelegate?
-  
+
   //MARK: - Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    setUI()
-    setConstraints()
+    configureUI()
     configureOnboardingDataSource()
   }
   
@@ -43,30 +42,22 @@ class OnboardingController : UIViewController {
     return .lightContent
   }
   
-  //MARK: - setUI()
-  private func setUI() {
+  //MARK: - configureUI()
+  func configureUI() {
     view.addSubview(onboardingView)
+    onboardingView.fillSuperview()
     onboardingView.delegate = self
+    
     view.addSubview(getStartButton)
     getStartButton.alpha = 0
+    getStartButton.centerX(inView: view)
+    getStartButton.anchor(bottom : view.safeAreaLayoutGuide.bottomAnchor,
+                            paddingBottom: 128)
   }
-  
-  //MARK: - setConstraints
-  private func setConstraints() {
-    onboardingView.snp.makeConstraints {
-      $0.top.leading.trailing.bottom.equalToSuperview()
-    }
-    
-    getStartButton.snp.makeConstraints {
-      $0.centerX.equalToSuperview()
-      $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-120)
-    }
-  }
-  
  
   
   //MARK: - configureOnboardingDataSource()
-  private func configureOnboardingDataSource() {
+    func configureOnboardingDataSource() {
     let item1 = OnboardingItemInfo(informationImage: #imageLiteral(resourceName: "baseline_dashboard_white_48pt").withRenderingMode(.alwaysOriginal), title: Msg_Cardgame, description: Discription_Cardgame , pageIcon: UIImage(), color: .systemBlue, titleColor: .white, descriptionColor: .white, titleFont: UIFont.boldSystemFont(ofSize: 24), descriptionFont: UIFont.boldSystemFont(ofSize: 16))
     
     let item2 = OnboardingItemInfo(informationImage: #imageLiteral(resourceName: "ic_person_outline_white_2x").withRenderingMode(.alwaysOriginal), title: Msg_Memory, description: Discription_Memory, pageIcon: UIImage(), color: .systemGreen, titleColor: .white, descriptionColor: .white, titleFont: UIFont.boldSystemFont(ofSize: 24), descriptionFont: UIFont.boldSystemFont(ofSize: 16))
@@ -82,7 +73,7 @@ class OnboardingController : UIViewController {
   }
   
   //MARK: - animateGetStartedButton ()
-  private func animateGetStartedButton (_ shouldShow : Bool) {
+    func animateGetStartedButton (_ shouldShow : Bool) {
     let alpha : CGFloat = shouldShow ? 1 : 0
     UIView.animate(withDuration: 0.5) {
       self.getStartButton.alpha = alpha

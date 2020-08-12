@@ -83,7 +83,7 @@ class HomeController : UIViewController {
   }
   
   //MARK: - authenticateUser()
-  private func authenticateUser() {
+    func authenticateUser() {
     if Auth.auth().currentUser?.uid == nil {
       DispatchQueue.main.async {
         self.presentLoginController()
@@ -96,10 +96,15 @@ class HomeController : UIViewController {
   fileprivate func presentOnboardingIfNeccessary() {
     guard let user = user else {return}
     guard !user.hasSeenOnboarding else {return}
+    
+    let controller = OnboardingController()
+       controller.delegate = self
+       controller.modalPresentationStyle = .fullScreen
+       present(controller, animated: true)
   }
   
   //MARK: - fetchUser()
-  private func fetchUser() {
+   func fetchUser() {
     Service.fetchUser { user in
       self.user = user
     }

@@ -166,7 +166,10 @@ class LoginController : UIViewController {
     guard let email = emailTextField.text else {return}
     guard let password = passwordTextField.text  else {return}
     
+    showLoader(true)
+    
     Service.logUserIn(withEmail: email, password: password) { (result, error) in
+      self.showLoader(false)
       if let error = error {
         print("Debug : Error in Signing in \(error.localizedDescription)")
         return
@@ -177,6 +180,8 @@ class LoginController : UIViewController {
   
   @objc func showForgotPassword() {
     let controller = ResetPasswordController()
+    controller.email = emailTextField.text
+    controller.delegate = self 
     navigationController?.pushViewController(controller, animated: true)
   }
   
@@ -220,5 +225,11 @@ extension LoginController : GIDSignInDelegate {
       self.delegate?.authenticationComplete()
       self.dismiss(animated: true, completion: nil)
     }
+  }
+}
+
+extension LoginController : ResetPasswordControllerDelegate {
+  func didSendResetPasswordLink() {
+    navigationController?.popViewController(animated: true)
   }
 }

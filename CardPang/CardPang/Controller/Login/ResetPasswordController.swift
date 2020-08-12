@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ResetPasswordControllerDelegate : class {
+  func didSendResetPasswordLink()
+}
+
 class ResetPasswordController : UIViewController {
   
   //MARK: - Properties
@@ -33,6 +37,8 @@ class ResetPasswordController : UIViewController {
   
   private var viewModel = ResetPasswordViewModel()
   
+   var email : String?
+  weak var delegate : ResetPasswordControllerDelegate?
   //MARK: - viewDidLoad()
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -40,6 +46,7 @@ class ResetPasswordController : UIViewController {
     setUI()
     setConstraints()
     configureNotificationObservers()
+    loadEmail()
   }
   
   //MARK: - setUI()
@@ -72,10 +79,29 @@ class ResetPasswordController : UIViewController {
     emailTextField.addTarget(self, action: #selector(textDidChange(_:)), for: .editingChanged)
   }
   
-  
+  //MARK: - loadEmail()
+  private func loadEmail() {
+    guard let email = email else {return}
+    viewModel.email = email
+    emailTextField.text = email
+    
+    updateForm()
+  }
   //MARK: - @objc func
   @objc func handleResetPassword() {
+    guard let email = viewModel.email else {return}
     
+    showLoader(true)
+    
+    Service.resetPassword(forEmail: email) { error in
+      self.showLoader(false)
+      if let error = error {
+        print("Debug : Failed to reset password \(error.localizedDescription)")
+        return
+      }
+      
+      self.delegate?.didSendResetPasswordLink()
+    }
   }
   
   @objc func handleGoBack() {
