@@ -15,8 +15,18 @@ class HomeController : UIViewController {
   private var user : User? {
     didSet {
       presentOnboardingIfNeccessary()
+      showWelcomeLabel()
     }
   }
+  
+  private let welcomeLabel : UILabel = {
+    let label = UILabel()
+    label.textColor = .white
+    label.font = UIFont.systemFont(ofSize: 28)
+    label.text = "Welcome User"
+    label.alpha = 0
+    return label
+  }()
   
   
   //MARK: - Life Cycle
@@ -24,11 +34,11 @@ class HomeController : UIViewController {
     super.viewDidLoad()
     configureGradientBackground()
     authenticateUser()
-    setNavi()
+    configureUI()
   }
   
-  //MARK: - setNavi()
-  private func setNavi() {
+  //MARK: - configureUI()
+  private func configureUI() {
     navigationController?.navigationBar.prefersLargeTitles = true
     navigationController?.navigationBar.barStyle = .black
     navigationItem.title = "Card Pang!"
@@ -36,6 +46,21 @@ class HomeController : UIViewController {
     let image = UIImage(systemName: "arrow.left")
     navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(handleLogout))
     navigationItem.leftBarButtonItem?.tintColor = .white
+    
+    view.addSubview(welcomeLabel)
+    welcomeLabel.snp.makeConstraints {
+      $0.centerX.centerY.equalToSuperview()
+    }
+  }
+  
+  //MARK: - showWelcomeLabel()
+  fileprivate func showWelcomeLabel() {
+    guard let user = user else {return}
+    guard user.hasSeenOnboarding else {return}
+    welcomeLabel.text = "환영합니다, \(user.fullname)"
+    UIView.animate(withDuration: 1) {
+      self.welcomeLabel.alpha = 1
+    }
   }
   
   //MARK: - logout()
@@ -51,8 +76,8 @@ class HomeController : UIViewController {
   //MARK: - presentLoginController()
   fileprivate func presentLoginController() {
     let controller = LoginController()
+    controller.delegate = self 
     let navi = UINavigationController(rootViewController: controller)
-    
     navi.modalPresentationStyle = .fullScreen
     self.present(navi, animated: true)
   }
@@ -102,6 +127,11 @@ extension HomeController : OnboardingControllerDelegate {
       print("Debug : Did set has seen onboarding")
     }
   }
-  
-  
+}
+
+extension HomeController : AuthenticationDelegate {
+  func authenticationComplete() {
+    dismiss(animated: true, completion: nil)
+    fetchUser()
+  }
 }

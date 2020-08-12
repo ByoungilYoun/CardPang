@@ -11,6 +11,10 @@ import SnapKit
 import Firebase
 import GoogleSignIn
 
+protocol AuthenticationDelegate : class {
+  func authenticationComplete()
+}
+
 class LoginController : UIViewController {
   
   //MARK: - Properties
@@ -79,7 +83,8 @@ class LoginController : UIViewController {
     return button
   }()
   
-  private var viewModel = LoginViewModel() 
+  private var viewModel = LoginViewModel()
+  weak var delegate : AuthenticationDelegate?
   
   //MARK: - Life Cycle
   override func viewDidLoad() {
@@ -166,7 +171,7 @@ class LoginController : UIViewController {
         print("Debug : Error in Signing in \(error.localizedDescription)")
         return
       }
-      self.dismiss(animated: true, completion: nil)
+      self.delegate?.authenticationComplete()
     }
   }
   
@@ -185,6 +190,7 @@ class LoginController : UIViewController {
   
   @objc func showRegisterationController() {
     let controller = RegistrationController()
+    controller.delegate = delegate
     navigationController?.pushViewController(controller, animated: true)
   }
   
@@ -211,7 +217,7 @@ extension LoginController : FormViewModel {
 extension LoginController : GIDSignInDelegate {
   func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
     Service.signInWithGoogle(didSignInFor: user) { (error, ref) in
-      print("Debug : Successfully signed in with Google")
+      self.delegate?.authenticationComplete()
       self.dismiss(animated: true, completion: nil)
     }
   }

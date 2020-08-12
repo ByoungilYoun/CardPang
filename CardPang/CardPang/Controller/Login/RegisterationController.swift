@@ -49,6 +49,7 @@ class RegistrationController : UIViewController {
   }()
   
   private var viewModel = RegisterationViewModel()
+  weak var delegate : AuthenticationDelegate?
   
   //MARK: - viewDidLoad()
   override func viewDidLoad() {
@@ -104,7 +105,7 @@ class RegistrationController : UIViewController {
         print("Debug : Error Signing in \(error.localizedDescription)")
         return
       }
-      self.dismiss(animated: true, completion: nil)
+      self.delegate?.authenticationComplete()
     }
   }
   
