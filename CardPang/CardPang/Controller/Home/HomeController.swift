@@ -11,6 +11,14 @@ import Firebase
 
 class HomeController : UIViewController {
   
+  //MARK: - Properties
+  private var user : User? {
+    didSet {
+      presentOnboardingIfNeccessary()
+    }
+  }
+  
+  
   //MARK: - Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -56,9 +64,22 @@ class HomeController : UIViewController {
         self.presentLoginController()
       }
     } else {
-      print("Debug : User is logged in")
+      fetchUser()
+  }
+}
+  //MARK: - presentOnboardingController()
+  fileprivate func presentOnboardingIfNeccessary() {
+    guard let user = user else {return}
+    guard !user.hasSeenOnboarding else {return}
+  }
+  
+  //MARK: - fetchUser()
+  private func fetchUser() {
+    Service.fetchUser { user in
+      self.user = user
     }
   }
+  
   
   //MARK: - objc func
   
@@ -70,4 +91,17 @@ class HomeController : UIViewController {
     alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
     present(alert, animated: true)
   }
+}
+
+extension HomeController : OnboardingControllerDelegate {
+  func controllerWantsToDismiss(_ controller: OnboardingController) {
+    controller.dismiss(animated: true, completion: nil)
+
+    Service.updateUserHasSeenOnboarding { (error, ref) in
+      self.user?.hasSeenOnboarding = true
+      print("Debug : Did set has seen onboarding")
+    }
+  }
+  
+  
 }

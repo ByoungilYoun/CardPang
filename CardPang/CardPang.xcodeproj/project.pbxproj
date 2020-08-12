@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F0A26DA24E44C4D00935425 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A26D924E44C4D00935425 /* User.swift */; };
 		0F1224E724E1E29600A5CBE3 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1224E624E1E29600A5CBE3 /* Service.swift */; };
 		0F1472DE24DF34C600F4C946 /* RegisterationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1472DD24DF34C600F4C946 /* RegisterationController.swift */; };
 		0F15F80324DDDFD6008B36CD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F15F80224DDDFD6008B36CD /* Extensions.swift */; };
@@ -18,6 +19,9 @@
 		0F8ED7A524DBC76700D5D008 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F8ED7A424DBC76700D5D008 /* Assets.xcassets */; };
 		0F8ED7A824DBC76700D5D008 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F8ED7A624DBC76700D5D008 /* LaunchScreen.storyboard */; };
 		0F8ED7B824DBC8B900D5D008 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8ED7B724DBC8B900D5D008 /* LoginController.swift */; };
+		0FB82C8624E316C20056B05B /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB82C8524E316C20056B05B /* OnboardingController.swift */; };
+		0FB82C8824E31F4D0056B05B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB82C8724E31F4D0056B05B /* Constants.swift */; };
+		0FB82C8A24E32D6E0056B05B /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB82C8924E32D6E0056B05B /* OnboardingViewModel.swift */; };
 		0FD15E4E24E077C40009FF2E /* ResetPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD15E4D24E077C40009FF2E /* ResetPasswordController.swift */; };
 		0FD15E5024E086770009FF2E /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD15E4F24E086770009FF2E /* AuthenticationViewModel.swift */; };
 		0FF6209824E165AE00BE42CB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FF6209724E165AE00BE42CB /* GoogleService-Info.plist */; };
@@ -26,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F0A26D924E44C4D00935425 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0F1224E624E1E29600A5CBE3 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		0F1472DD24DF34C600F4C946 /* RegisterationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterationController.swift; sourceTree = "<group>"; };
 		0F15F80224DDDFD6008B36CD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -38,6 +43,9 @@
 		0F8ED7A724DBC76700D5D008 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F8ED7A924DBC76700D5D008 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F8ED7B724DBC8B900D5D008 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		0FB82C8524E316C20056B05B /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
+		0FB82C8724E31F4D0056B05B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0FB82C8924E32D6E0056B05B /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		0FD15E4D24E077C40009FF2E /* ResetPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordController.swift; sourceTree = "<group>"; };
 		0FD15E4F24E086770009FF2E /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		0FF6209724E165AE00BE42CB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -99,6 +107,7 @@
 		0F8ED7AF24DBC80E00D5D008 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0FB82C8424E3168E0056B05B /* OnboardingController */,
 				0FF6209924E17A8900BE42CB /* Login */,
 				0FF6209A24E17A9700BE42CB /* Home */,
 			);
@@ -109,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				0FD15E4F24E086770009FF2E /* AuthenticationViewModel.swift */,
+				0FB82C8924E32D6E0056B05B /* OnboardingViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -126,6 +136,7 @@
 		0F8ED7B224DBC81300D5D008 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0F0A26D924E44C4D00935425 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -134,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				0F15F80224DDDFD6008B36CD /* Extensions.swift */,
+				0FB82C8724E31F4D0056B05B /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -144,6 +156,14 @@
 				0F1224E624E1E29600A5CBE3 /* Service.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		0FB82C8424E3168E0056B05B /* OnboardingController */ = {
+			isa = PBXGroup;
+			children = (
+				0FB82C8524E316C20056B05B /* OnboardingController.swift */,
+			);
+			path = OnboardingController;
 			sourceTree = "<group>";
 		};
 		0FF6209924E17A8900BE42CB /* Login */ = {
@@ -325,9 +345,13 @@
 				0FD15E4E24E077C40009FF2E /* ResetPasswordController.swift in Sources */,
 				0F8ED79C24DBC76600D5D008 /* AppDelegate.swift in Sources */,
 				0FF6209C24E17AAD00BE42CB /* HomeController.swift in Sources */,
+				0FB82C8A24E32D6E0056B05B /* OnboardingViewModel.swift in Sources */,
 				0F15F80324DDDFD6008B36CD /* Extensions.swift in Sources */,
 				0F1472DE24DF34C600F4C946 /* RegisterationController.swift in Sources */,
+				0F0A26DA24E44C4D00935425 /* User.swift in Sources */,
+				0FB82C8824E31F4D0056B05B /* Constants.swift in Sources */,
 				0FD15E5024E086770009FF2E /* AuthenticationViewModel.swift in Sources */,
+				0FB82C8624E316C20056B05B /* OnboardingController.swift in Sources */,
 				0F1224E724E1E29600A5CBE3 /* Service.swift in Sources */,
 				0F8ED7B824DBC8B900D5D008 /* LoginController.swift in Sources */,
 				0F49355624DF1A1200F045FC /* CustomTextLabel.swift in Sources */,

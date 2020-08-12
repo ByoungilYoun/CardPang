@@ -12,4 +12,5 @@ target 'CardPang' do
 	pod 'JGProgressHUD','~>2.0.3'
 	pod 'GoogleSignIn'
 	pod 'Firebase/Database'
+	pod 'paper-onboarding'
 end
