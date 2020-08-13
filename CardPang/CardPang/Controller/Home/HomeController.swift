@@ -28,6 +28,13 @@ class HomeController : UIViewController {
     return label
   }()
   
+  private let collectionView : UICollectionView = {
+    let layout = UICollectionViewFlowLayout()
+    layout.scrollDirection = .vertical
+    return UICollectionView(frame: .zero, collectionViewLayout: layout)
+  }()
+  
+  var gameMode = ["Easy", "Normal", "Hard"]
   
   //MARK: - Life Cycle
   override func viewDidLoad() {
@@ -49,15 +56,35 @@ class HomeController : UIViewController {
     
     view.addSubview(welcomeLabel)
     welcomeLabel.snp.makeConstraints {
-      $0.centerX.centerY.equalToSuperview()
+      $0.centerX.equalToSuperview()
+      $0.top.equalToSuperview().offset(150)
     }
+    
+    collectionView.dataSource = self
+    collectionView.delegate = self
+    collectionView.register(GameModeCell.self, forCellWithReuseIdentifier: GameModeCell.identifier)
+    collectionView.backgroundColor = .clear
+    collectionView.layer.cornerRadius = 10
+    view.addSubview(collectionView)
+    
+    collectionView.snp.makeConstraints {
+      $0.top.equalTo(welcomeLabel.snp.bottom).offset(20)
+      $0.leading.trailing.equalToSuperview()
+      $0.bottom.equalToSuperview()
+      
+    }
+  }
+  
+  private struct Standard {
+    static let standard : CGFloat = 20
+    static let inset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
   }
   
   //MARK: - showWelcomeLabel()
   fileprivate func showWelcomeLabel() {
     guard let user = user else {return}
     guard user.hasSeenOnboarding else {return}
-    welcomeLabel.text = "환영합니다, \(user.fullname)"
+    welcomeLabel.text = "환영합니다, \(user.fullname) 님!"
     UIView.animate(withDuration: 1) {
       self.welcomeLabel.alpha = 1
     }
@@ -123,6 +150,7 @@ class HomeController : UIViewController {
   }
 }
 
+  //MARK: - OnboardingControllerDelegate
 extension HomeController : OnboardingControllerDelegate {
   func controllerWantsToDismiss(_ controller: OnboardingController) {
     controller.dismiss(animated: true, completion: nil)
@@ -133,10 +161,49 @@ extension HomeController : OnboardingControllerDelegate {
     }
   }
 }
-
+  
+  //MARK: - AuthenticationDelegate
 extension HomeController : AuthenticationDelegate {
   func authenticationComplete() {
     dismiss(animated: true, completion: nil)
     fetchUser()
   }
+}
+
+  //MARK: - UICollectionViewDataSource
+extension HomeController : UICollectionViewDataSource {
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return 3
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GameModeCell.identifier, for: indexPath) as! GameModeCell
+    cell.backgroundColor = .lightGray
+    cell.layer.cornerRadius = 20
+    cell.configure(gameMode[indexPath.row])
+    return cell
+  }
+}
+
+  //MARK: - UICollectionViewDelegateFlowLayout
+extension HomeController : UICollectionViewDelegateFlowLayout {
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    Standard.standard
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    return 0
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    Standard.inset
+  }
+  
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    let width = view.frame.size.width - Standard.inset.left - Standard.inset.right
+    return CGSize(width: width, height: 100)
+  }
+  
+  
 }

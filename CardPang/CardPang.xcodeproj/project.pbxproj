@@ -15,6 +15,7 @@
 		0F49355424DF17E100F045FC /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F49355324DF17E100F045FC /* CustomTextField.swift */; };
 		0F49355624DF1A1200F045FC /* CustomTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F49355524DF1A1200F045FC /* CustomTextLabel.swift */; };
 		0F49355824DF1C7500F045FC /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F49355724DF1C7500F045FC /* AuthButton.swift */; };
+		0F7DD1FA24E5BB25002C764B /* GameModeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7DD1F924E5BB25002C764B /* GameModeCell.swift */; };
 		0F8ED79C24DBC76600D5D008 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8ED79B24DBC76600D5D008 /* AppDelegate.swift */; };
 		0F8ED7A524DBC76700D5D008 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F8ED7A424DBC76700D5D008 /* Assets.xcassets */; };
 		0F8ED7A824DBC76700D5D008 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F8ED7A624DBC76700D5D008 /* LaunchScreen.storyboard */; };
@@ -37,6 +38,7 @@
 		0F49355324DF17E100F045FC /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		0F49355524DF1A1200F045FC /* CustomTextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextLabel.swift; sourceTree = "<group>"; };
 		0F49355724DF1C7500F045FC /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
+		0F7DD1F924E5BB25002C764B /* GameModeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeCell.swift; sourceTree = "<group>"; };
 		0F8ED79824DBC76600D5D008 /* CardPang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardPang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F8ED79B24DBC76600D5D008 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F8ED7A424DBC76700D5D008 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -68,6 +70,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F7DD1F824E5BB15002C764B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0F7DD1F924E5BB25002C764B /* GameModeCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		0F8ED78F24DBC76600D5D008 = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +102,7 @@
 				0F8ED79B24DBC76600D5D008 /* AppDelegate.swift */,
 				0F8ED7B324DBC81500D5D008 /* Utils */,
 				0F8ED7B224DBC81300D5D008 /* Model */,
+				0F7DD1F824E5BB15002C764B /* Cell */,
 				0F8ED7B124DBC81100D5D008 /* View */,
 				0F8ED7B024DBC81000D5D008 /* ViewModel */,
 				0F8ED7AF24DBC80E00D5D008 /* Controller */,
@@ -352,6 +363,7 @@
 				0FB82C8824E31F4D0056B05B /* Constants.swift in Sources */,
 				0FD15E5024E086770009FF2E /* AuthenticationViewModel.swift in Sources */,
 				0FB82C8624E316C20056B05B /* OnboardingController.swift in Sources */,
+				0F7DD1FA24E5BB25002C764B /* GameModeCell.swift in Sources */,
 				0F1224E724E1E29600A5CBE3 /* Service.swift in Sources */,
 				0F8ED7B824DBC8B900D5D008 /* LoginController.swift in Sources */,
 				0F49355624DF1A1200F045FC /* CustomTextLabel.swift in Sources */,
