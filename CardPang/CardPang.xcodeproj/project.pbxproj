@@ -16,10 +16,15 @@
 		0F49355624DF1A1200F045FC /* CustomTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F49355524DF1A1200F045FC /* CustomTextLabel.swift */; };
 		0F49355824DF1C7500F045FC /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F49355724DF1C7500F045FC /* AuthButton.swift */; };
 		0F7DD1FA24E5BB25002C764B /* GameModeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7DD1F924E5BB25002C764B /* GameModeCell.swift */; };
+		0F7DD1FD24E5C2ED002C764B /* EasyModeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7DD1FC24E5C2ED002C764B /* EasyModeController.swift */; };
+		0F7DD1FF24E5C307002C764B /* NormalModeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7DD1FE24E5C307002C764B /* NormalModeController.swift */; };
+		0F7DD20224E5C32F002C764B /* HardModeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7DD20124E5C32F002C764B /* HardModeController.swift */; };
 		0F8ED79C24DBC76600D5D008 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8ED79B24DBC76600D5D008 /* AppDelegate.swift */; };
 		0F8ED7A524DBC76700D5D008 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F8ED7A424DBC76700D5D008 /* Assets.xcassets */; };
 		0F8ED7A824DBC76700D5D008 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F8ED7A624DBC76700D5D008 /* LaunchScreen.storyboard */; };
 		0F8ED7B824DBC8B900D5D008 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8ED7B724DBC8B900D5D008 /* LoginController.swift */; };
+		0FABF18224E662EA007AA743 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FABF18124E662EA007AA743 /* Card.swift */; };
+		0FABF18424E66314007AA743 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FABF18324E66314007AA743 /* CardModel.swift */; };
 		0FB82C8624E316C20056B05B /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB82C8524E316C20056B05B /* OnboardingController.swift */; };
 		0FB82C8824E31F4D0056B05B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB82C8724E31F4D0056B05B /* Constants.swift */; };
 		0FB82C8A24E32D6E0056B05B /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB82C8924E32D6E0056B05B /* OnboardingViewModel.swift */; };
@@ -39,12 +44,17 @@
 		0F49355524DF1A1200F045FC /* CustomTextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextLabel.swift; sourceTree = "<group>"; };
 		0F49355724DF1C7500F045FC /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		0F7DD1F924E5BB25002C764B /* GameModeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeCell.swift; sourceTree = "<group>"; };
+		0F7DD1FC24E5C2ED002C764B /* EasyModeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyModeController.swift; sourceTree = "<group>"; };
+		0F7DD1FE24E5C307002C764B /* NormalModeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalModeController.swift; sourceTree = "<group>"; };
+		0F7DD20124E5C32F002C764B /* HardModeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardModeController.swift; sourceTree = "<group>"; };
 		0F8ED79824DBC76600D5D008 /* CardPang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardPang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F8ED79B24DBC76600D5D008 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F8ED7A424DBC76700D5D008 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F8ED7A724DBC76700D5D008 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F8ED7A924DBC76700D5D008 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F8ED7B724DBC8B900D5D008 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		0FABF18124E662EA007AA743 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		0FABF18324E66314007AA743 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		0FB82C8524E316C20056B05B /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
 		0FB82C8724E31F4D0056B05B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0FB82C8924E32D6E0056B05B /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
@@ -78,11 +88,22 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		0F7DD1FB24E5C2BB002C764B /* GameMode */ = {
+			isa = PBXGroup;
+			children = (
+				0F7DD1FC24E5C2ED002C764B /* EasyModeController.swift */,
+				0F7DD1FE24E5C307002C764B /* NormalModeController.swift */,
+				0F7DD20124E5C32F002C764B /* HardModeController.swift */,
+			);
+			path = GameMode;
+			sourceTree = "<group>";
+		};
 		0F8ED78F24DBC76600D5D008 = {
 			isa = PBXGroup;
 			children = (
 				0F8ED79A24DBC76600D5D008 /* CardPang */,
 				0F8ED79924DBC76600D5D008 /* Products */,
+				0F8ED7A424DBC76700D5D008 /* Assets.xcassets */,
 				DE78E30A1DB09CD0E084C92B /* Pods */,
 				B9C3A5F43DFB301ADC75D275 /* Frameworks */,
 			);
@@ -107,7 +128,6 @@
 				0F8ED7B024DBC81000D5D008 /* ViewModel */,
 				0F8ED7AF24DBC80E00D5D008 /* Controller */,
 				0F8ED7B524DBC87800D5D008 /* API */,
-				0F8ED7A424DBC76700D5D008 /* Assets.xcassets */,
 				0F8ED7A624DBC76700D5D008 /* LaunchScreen.storyboard */,
 				0F8ED7A924DBC76700D5D008 /* Info.plist */,
 				0FF6209724E165AE00BE42CB /* GoogleService-Info.plist */,
@@ -121,6 +141,7 @@
 				0FB82C8424E3168E0056B05B /* OnboardingController */,
 				0FF6209924E17A8900BE42CB /* Login */,
 				0FF6209A24E17A9700BE42CB /* Home */,
+				0F7DD1FB24E5C2BB002C764B /* GameMode */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -148,6 +169,8 @@
 			isa = PBXGroup;
 			children = (
 				0F0A26D924E44C4D00935425 /* User.swift */,
+				0FABF18124E662EA007AA743 /* Card.swift */,
+				0FABF18324E66314007AA743 /* CardModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -355,15 +378,20 @@
 				0F49355824DF1C7500F045FC /* AuthButton.swift in Sources */,
 				0FD15E4E24E077C40009FF2E /* ResetPasswordController.swift in Sources */,
 				0F8ED79C24DBC76600D5D008 /* AppDelegate.swift in Sources */,
+				0F7DD1FD24E5C2ED002C764B /* EasyModeController.swift in Sources */,
 				0FF6209C24E17AAD00BE42CB /* HomeController.swift in Sources */,
 				0FB82C8A24E32D6E0056B05B /* OnboardingViewModel.swift in Sources */,
+				0FABF18224E662EA007AA743 /* Card.swift in Sources */,
 				0F15F80324DDDFD6008B36CD /* Extensions.swift in Sources */,
 				0F1472DE24DF34C600F4C946 /* RegisterationController.swift in Sources */,
+				0F7DD1FF24E5C307002C764B /* NormalModeController.swift in Sources */,
 				0F0A26DA24E44C4D00935425 /* User.swift in Sources */,
 				0FB82C8824E31F4D0056B05B /* Constants.swift in Sources */,
 				0FD15E5024E086770009FF2E /* AuthenticationViewModel.swift in Sources */,
+				0F7DD20224E5C32F002C764B /* HardModeController.swift in Sources */,
 				0FB82C8624E316C20056B05B /* OnboardingController.swift in Sources */,
 				0F7DD1FA24E5BB25002C764B /* GameModeCell.swift in Sources */,
+				0FABF18424E66314007AA743 /* CardModel.swift in Sources */,
 				0F1224E724E1E29600A5CBE3 /* Service.swift in Sources */,
 				0F8ED7B824DBC8B900D5D008 /* LoginController.swift in Sources */,
 				0F49355624DF1A1200F045FC /* CustomTextLabel.swift in Sources */,

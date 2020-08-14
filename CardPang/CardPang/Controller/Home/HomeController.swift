@@ -181,10 +181,29 @@ extension HomeController : UICollectionViewDataSource {
     cell.backgroundColor = .lightGray
     cell.layer.cornerRadius = 20
     cell.configure(gameMode[indexPath.row])
+//    cell.backgroundColor = .clear
     return cell
   }
 }
 
+  //MARK: - UICollectionViewDelegate
+extension HomeController : UICollectionViewDelegate {
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    switch indexPath.row {
+    case 0 :
+      let controller = EasyModeController()
+      navigationController?.pushViewController(controller, animated: true)
+    case 1 :
+      let controller = NormalModeController()
+      navigationController?.pushViewController(controller, animated: true)
+    case 2 :
+      let controller = HardModeController()
+      navigationController?.pushViewController(controller, animated: true)
+    default :
+      break
+    }
+  }
+}
   //MARK: - UICollectionViewDelegateFlowLayout
 extension HomeController : UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
