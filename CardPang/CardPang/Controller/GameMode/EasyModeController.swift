@@ -130,7 +130,7 @@ extension EasyModeController : UICollectionViewDelegate {
     
     let card = cardArray[indexPath.row]
     if card.isFlipped == false && card.isMatched == false {
-      cell.filp()
+      cell.flip()
       card.isFlipped = true
       
       if firstFlippedCardIndex == nil {

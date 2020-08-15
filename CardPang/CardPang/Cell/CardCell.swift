@@ -67,7 +67,7 @@ class CardCell : UICollectionViewCell {
   }
   
   //MARK: - flip()
-  func filp() {
+  func flip() {
     UIView.transition(from: backImageView, to: frontImageView, duration: 0.3, options: [.showHideTransitionViews, .transitionFlipFromLeft], completion: nil)
   }
   
