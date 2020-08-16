@@ -97,8 +97,8 @@ class ResetPasswordController : UIViewController {
     
     Service.resetPassword(forEmail: email) { error in
       self.showLoader(false)
-      if let error = error {
-        print("Debug : Failed to reset password \(error.localizedDescription)")
+      if error != nil {
+        self.showMessage(withTitle: "", message: MSG_NOT_RIGHT_EMAIL)
         return
       }
       

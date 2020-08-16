@@ -242,6 +242,6 @@ extension LoginController : GIDSignInDelegate {
 extension LoginController : ResetPasswordControllerDelegate {
   func didSendResetPasswordLink() {
     navigationController?.popViewController(animated: true)
-    
+    self.showMessage(withTitle: "", message: MSG_RESET_PASSWORD_LINK_SENT)
   }
 }

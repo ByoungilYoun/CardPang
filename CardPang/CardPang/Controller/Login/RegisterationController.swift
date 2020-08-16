@@ -106,8 +106,8 @@ class RegistrationController : UIViewController {
     showLoader(true)
     Service.registerUserWithFirebase(withEmail: email, password: password, fullname: fullname) { (error, ref) in
       self.showLoader(false)
-      if let error = error {
-        print("Debug : Error Signing in \(error.localizedDescription)")
+      if error != nil {
+        self.showMessage(withTitle: "", message: MSG_NOT_RIGHT_EMAIL_OR_PASSWORD)
         return
       }
       self.delegate?.authenticationComplete()

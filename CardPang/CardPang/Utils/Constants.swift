@@ -18,6 +18,8 @@ let Discription_Memory = "카드 게임을 통해 기억력 향상시켜보세�
 let Discription_TimeLimit = "제한 시간 안에 게임을 끝내보세요!\nEasy(30초), Normal(40초), Hard(50초) ⏱"
 
 let MSG_RESET_PASSWORD_LINK_SENT = "해당 이메일로 초기화 링크를 보내드렸습니다."
+let MSG_NOT_RIGHT_EMAIL_OR_PASSWORD = "이메일 또는 비밀번호가 잘못된 형식입니다."
+let MSG_NOT_RIGHT_EMAIL = "잘못된 이메일 형식입니다."
 
 let DB_REF = Database.database().reference()
 let REF_USERS = DB_REF.child("users")
