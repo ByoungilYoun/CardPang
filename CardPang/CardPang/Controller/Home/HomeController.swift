@@ -48,7 +48,7 @@ class HomeController : UIViewController {
   private func configureUI() {
     navigationController?.navigationBar.prefersLargeTitles = true
     navigationController?.navigationBar.barStyle = .black
-    navigationItem.title = "Card Pang!"
+    navigationItem.title = "Fruit Pang"
     
     let image = UIImage(systemName: "arrow.left")
     navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(handleLogout))

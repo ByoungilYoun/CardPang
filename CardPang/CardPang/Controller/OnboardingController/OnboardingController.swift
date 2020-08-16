@@ -58,7 +58,7 @@ class OnboardingController : UIViewController {
   
   //MARK: - configureOnboardingDataSource()
     func configureOnboardingDataSource() {
-    let item1 = OnboardingItemInfo(informationImage: #imageLiteral(resourceName: "baseline_dashboard_white_48pt").withRenderingMode(.alwaysOriginal), title: Msg_Cardgame, description: Discription_Cardgame , pageIcon: UIImage(), color: .systemBlue, titleColor: .white, descriptionColor: .white, titleFont: UIFont.boldSystemFont(ofSize: 24), descriptionFont: UIFont.boldSystemFont(ofSize: 16))
+    let item1 = OnboardingItemInfo(informationImage: #imageLiteral(resourceName: "card10").withRenderingMode(.alwaysOriginal), title: Msg_Cardgame, description: Discription_Cardgame , pageIcon: UIImage(), color: .systemBlue, titleColor: .white, descriptionColor: .white, titleFont: UIFont.boldSystemFont(ofSize: 24), descriptionFont: UIFont.boldSystemFont(ofSize: 16))
     
     let item2 = OnboardingItemInfo(informationImage: #imageLiteral(resourceName: "ic_person_outline_white_2x").withRenderingMode(.alwaysOriginal), title: Msg_Memory, description: Discription_Memory, pageIcon: UIImage(), color: .systemGreen, titleColor: .white, descriptionColor: .white, titleFont: UIFont.boldSystemFont(ofSize: 24), descriptionFont: UIFont.boldSystemFont(ofSize: 16))
     

@@ -55,9 +55,9 @@ class CardCell : UICollectionViewCell {
     }
     
     frontImageView.image = UIImage(named: card.imageName)
-    frontImageView.contentMode = .scaleAspectFit
+    frontImageView.contentMode = .scaleToFill
     backImageView.image = UIImage(named: "back")
-    backImageView.contentMode = .scaleAspectFit
+    backImageView.contentMode = .scaleToFill
     
     if card.isFlipped == true {
       UIView.transition(from: backImageView, to: frontImageView, duration: 0, options: [.transitionFlipFromLeft, .showHideTransitionViews], completion: nil)

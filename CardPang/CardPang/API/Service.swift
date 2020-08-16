@@ -78,7 +78,7 @@ struct Service {
   //MARK: - updateUserHasSeenOnboarding
   static func updateUserHasSeenOnboarding(completion : @escaping (DatabaseCompletion)) {
      guard let uid = Auth.auth().currentUser?.uid else {return}
-    REF_USERS.child("hasSeenOnboarding").setValue(true, withCompletionBlock: completion)
+    REF_USERS.child(uid).child("hasSeenOnboarding").setValue(true, withCompletionBlock: completion)
   }
   
   //MARK: - resetPassword
