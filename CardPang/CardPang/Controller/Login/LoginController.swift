@@ -18,8 +18,8 @@ protocol AuthenticationDelegate : class {
 class LoginController : UIViewController {
   
   //MARK: - Properties
-  private let iconImage = UIImageView(image: #imageLiteral(resourceName: "icon"))
-  private let titleLabel = CustomTextLabel(title: "Card Pang")
+  private let iconImage = UIImageView(image: #imageLiteral(resourceName: "Main Icon"))
+  private let titleLabel = CustomTextLabel(title: "Fruit Pang")
   
   private let emailTextField = CustomTextField(placeholder: "이메일")
   
@@ -107,6 +107,9 @@ class LoginController : UIViewController {
   private func setUI(){
     view.addSubview(iconImage)
     view.addSubview(titleLabel)
+    
+    emailTextField.delegate = self
+    passwordTextField.delegate = self
     
     let stackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, loginButton, forgotButton])
     stackView.axis = .vertical
@@ -218,6 +221,14 @@ extension LoginController : FormViewModel {
   }
 }
 
+//MARK: - extension UITextFieldDelegate 
+extension LoginController : UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    emailTextField.endEditing(true)
+    passwordTextField.endEditing(true)
+    return true
+  }
+}
 //MARK: - extension GIDSignInDelegate
 extension LoginController : GIDSignInDelegate {
   func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
@@ -231,5 +242,6 @@ extension LoginController : GIDSignInDelegate {
 extension LoginController : ResetPasswordControllerDelegate {
   func didSendResetPasswordLink() {
     navigationController?.popViewController(animated: true)
+    
   }
 }

@@ -48,7 +48,7 @@
 		0F7DD1FC24E5C2ED002C764B /* EasyModeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyModeController.swift; sourceTree = "<group>"; };
 		0F7DD1FE24E5C307002C764B /* NormalModeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalModeController.swift; sourceTree = "<group>"; };
 		0F7DD20124E5C32F002C764B /* HardModeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardModeController.swift; sourceTree = "<group>"; };
-		0F8ED79824DBC76600D5D008 /* CardPang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardPang.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F8ED79824DBC76600D5D008 /* Fruit Pang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fruit Pang.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F8ED79B24DBC76600D5D008 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F8ED7A424DBC76700D5D008 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F8ED7A724DBC76700D5D008 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 		0F8ED79924DBC76600D5D008 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0F8ED79824DBC76600D5D008 /* CardPang.app */,
+				0F8ED79824DBC76600D5D008 /* Fruit Pang.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -261,7 +261,7 @@
 				0F15F80524DDE9F3008B36CD /* SnapKit */,
 			);
 			productName = CardPang;
-			productReference = 0F8ED79824DBC76600D5D008 /* CardPang.app */;
+			productReference = 0F8ED79824DBC76600D5D008 /* Fruit Pang.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -544,7 +544,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.byoungil.youn.CardPang;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Fruit Pang";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -564,7 +564,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.byoungil.youn.CardPang;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Fruit Pang";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

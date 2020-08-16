@@ -33,7 +33,7 @@ class EasyModeController : UIViewController {
   }()
   
   var timer : Timer?
-  var milliseconds : Float = 20 * 1000
+  var milliseconds : Float = 30 * 1000
   var model = CardModel()
   var cardArray = [Card]()
   var firstFlippedCardIndex : IndexPath?
@@ -184,14 +184,14 @@ extension EasyModeController : UICollectionViewDelegate {
       if milliseconds > 0 {
         timer?.invalidate()
       }
-      title = "축하합니다!"
-      message = "모두 맞추셨어요!"
+      title = "축하합니다👏🏻"
+      message = "모두 맞추셨어요! 😎"
     } else {
       if milliseconds > 0 {
         return
       }
-      title = "아쉬워요"
-      message = "모두 못맞추셨네요"
+      title = "아쉬워요 😩"
+      message = "모두 못맞추셨네요 🙈"
     }
     showAlert(title, message)
   }

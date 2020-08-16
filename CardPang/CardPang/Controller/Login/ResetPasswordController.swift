@@ -16,7 +16,7 @@ class ResetPasswordController : UIViewController {
   
   //MARK: - Properties
   
-  private let iconImage = UIImageView(image: #imageLiteral(resourceName: "icon"))
+  private let iconImage = UIImageView(image: #imageLiteral(resourceName: "Main Icon"))
   private let emailTextField = CustomTextField(placeholder: "이메일")
   
   private let resetPasswordButton : AuthButton = {
@@ -53,6 +53,8 @@ class ResetPasswordController : UIViewController {
   private func setUI() {
     view.addSubview(iconImage)
     view.addSubview(backButton)
+    
+    emailTextField.delegate = self
     
     let stackView = UIStackView(arrangedSubviews: [emailTextField, resetPasswordButton])
     stackView.axis = .vertical
@@ -116,11 +118,19 @@ class ResetPasswordController : UIViewController {
   }
 }
 
-  //MARK: - extension
+  //MARK: - FormViewModel
 extension ResetPasswordController : FormViewModel {
   func updateForm() {
     resetPasswordButton.isEnabled = viewModel.shouldEnableButton
     resetPasswordButton.backgroundColor = viewModel.buttonBackgroundColor
     resetPasswordButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
+  }
+}
+
+  //MARK: - UITextFieldDelegate
+extension ResetPasswordController : UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    emailTextField.endEditing(true)
+    return true
   }
 }

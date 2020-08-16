@@ -13,7 +13,7 @@ class RegistrationController : UIViewController {
   
   //MARK: - Properties
   
-  private let iconImage = UIImageView(image: #imageLiteral(resourceName: "icon"))
+  private let iconImage = UIImageView(image: #imageLiteral(resourceName: "Main Icon"))
   
   private let emailTextField = CustomTextField(placeholder: "이메일")
   private let fullnameTextField = CustomTextField(placeholder: "성명")
@@ -63,6 +63,9 @@ class RegistrationController : UIViewController {
   //MARK: - setUI()
   private func setUI() {
     view.addSubview(iconImage)
+    emailTextField.delegate = self
+    passwordTextField.delegate = self
+    fullnameTextField.delegate = self
     
     let stackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, fullnameTextField, signUpButton])
     stackView.axis = .vertical
@@ -133,5 +136,15 @@ extension RegistrationController : FormViewModel {
     signUpButton.isEnabled = viewModel.shouldEnableButton
     signUpButton.backgroundColor = viewModel.buttonBackgroundColor
     signUpButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
+  }
+}
+
+//MARK: - extension UITextFieldDelegate
+extension RegistrationController : UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    emailTextField.endEditing(true)
+    passwordTextField.endEditing(true)
+    fullnameTextField.endEditing(true)
+    return true 
   }
 }

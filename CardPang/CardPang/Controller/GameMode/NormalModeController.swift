@@ -33,7 +33,7 @@ class NormalModeController : UIViewController {
   }()
   
   var timer : Timer?
-  var milliseconds : Float = 30 * 1000
+  var milliseconds : Float = 40 * 1000
   var model = CardModel()
   var cardArray = [Card]()
   var firstFlippedCardIndex : IndexPath?

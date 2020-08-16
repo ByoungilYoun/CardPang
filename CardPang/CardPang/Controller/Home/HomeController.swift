@@ -178,10 +178,10 @@ extension HomeController : UICollectionViewDataSource {
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GameModeCell.identifier, for: indexPath) as! GameModeCell
-    cell.backgroundColor = .lightGray
+//    cell.backgroundColor = .lightGray
     cell.layer.cornerRadius = 20
     cell.configure(gameMode[indexPath.row])
-//    cell.backgroundColor = .clear
+    cell.backgroundColor = .clear
     return cell
   }
 }
