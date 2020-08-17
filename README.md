@@ -1,2 +1,2 @@
-# CardPang
+# FruitPang
 simple card memory game 
